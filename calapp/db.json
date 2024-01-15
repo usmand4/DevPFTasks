@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "name": "iphone",
+      "title": "iphone 15",
+      "description": "apple iphone",
+      "stock": "54",
+      "buyingPrice": "546",
+      "salePrice": "738",
+      "purchaseQuantity": "30",
+      "productType": "smartphone",
+      "id": 1
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
