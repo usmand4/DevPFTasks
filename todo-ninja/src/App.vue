@@ -1,40 +1,22 @@
 <template>
-  <img :src="require('./assets/logo.png')"/>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span> Vuetify </span>
-        <span class="font-weight-light"> MATERIAL DESIGN </span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn flat href="https://github.com/usmand4/DevPFTasks.git" target="_blank">
-        <span class="mr-2"> Latest Release </span>
-      </v-btn>
-    </v-toolbar>
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+  <div>
+   <v-app>
+    <SideBar @selectOption="onSelectOption"/>
+    <v-main>
+      <ImageGallery :isWithColor="isWithColor"/>
+    </v-main>
+   </v-app>
+  </div>
 </template>
 
-<script>
- import HelloWorld from './components/HelloWorld.vue';
-    
-export default {
-  name: 'App',
-  components: {
-    HelloWorld,
+<script setup>
+  
+  import SideBar from './components/SideBar.vue';
+  import ImageGallery from './components/ImageGallery.vue';
+  import { ref } from 'vue';
+  
+  const isWithColor = ref(true);
+  const onSelectOption = (isColor) => {
+    isWithColor.value = isColor;
   }
-}
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
